@@ -1,0 +1,158 @@
+@import url(./variables.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font);
+    font-size: var(--fontSize);
+    background-color: var(--almost-White);
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.header .nav {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 45px 3%;
+}
+
+.menu {
+    position: relative;
+    right: 17%;
+    list-style: none;
+    display: flex;
+}
+
+.buttons {
+    display: flex;
+}
+
+.buttons p:last-child {
+    border: 1px solid var(--mediumGray);
+    border-radius: 15px;
+    margin: 0;
+}
+
+.buttons p:last-child:hover {
+    border: 1px solid var(--almostBlack);;
+}
+
+.menu li, .buttons p {
+    transition: all 500ms ease;
+    cursor: pointer;
+    padding: 15px 20px;
+    font-size: 1rem;
+    color: var(--mediumGray);
+    margin-right: 20px;
+}
+
+.menu li:hover, .buttons p:hover {
+    color: var(--almostBlack);
+}
+
+.menuControl {
+    position: relative;
+}
+.menuControl > img {
+    position: absolute;
+    top: 20px;
+    right: 5px;
+}
+
+.subMenu, .subMenuB {
+    display: none;
+    min-width: 110%;
+    list-style: none;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 500px var(--mediumGray);
+    top: 50px;
+    right: 0;
+}
+
+.subMenu {
+    min-width: 150%;
+}
+
+.subMenu li img {
+    margin-right: 20px;
+}
+
+.subMenu.active, .subMenuB.active {
+    display: block;
+}
+
+.subMenu li, .subMenuB li {
+    margin: 0;
+}
+
+.subMenuB {
+    left: 0;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.texts h1 {
+    font-size: 5rem;
+}
+
+.texts span {
+    display: block;
+}
+
+.texts p {
+    width: 70%;
+    color: var(--mediumGray);
+    margin-top: 40px;
+    font-size: var(--fontSize);
+}
+
+.texts button {
+    cursor: pointer;
+    background-color: var(--almostBlack);
+    outline: none;
+    border: none;
+    color: var(--almost-White);
+    padding: 15px 40px;
+    border-radius: 12px;
+    margin-top: 50px;
+    font-weight: 700;
+    font-family: var(--font);
+    transition: all 500ms ease;
+}
+
+.texts button:hover {
+    background-color: var(--almost-White);
+    border: 1px solid var(--almostBlack);
+    color: var(--almostBlack);
+}
+
+.client {
+    width: 70%;
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image picture img {
+    width: 500px;
+}
+
+.attribution {
+    display: none;
+}
