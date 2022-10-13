@@ -14,8 +14,11 @@ body {
 }
 
 .container {
+    height: calc(100% - 100px);
     width: 80%;
+    display: flex;
     margin: 0 auto;
+    align-items: center;
 }
 
 .header .nav {
@@ -28,6 +31,7 @@ body {
 
 .menu {
     display: flex;
+    justify-content: space-between;
     flex-grow: 2;
     margin-left: 5%;
     list-style: none;
@@ -60,7 +64,7 @@ body {
     color: var(--almostBlack);
 }
 
-.menuControl {
+.menuControl, .menuControlB {
     position: relative;
 }
 .menuControl > img {
@@ -70,7 +74,6 @@ body {
 }
 
 .subMenu, .subMenuB {
-    display: none;
     min-width: 110%;
     list-style: none;
     position: absolute;
@@ -79,6 +82,10 @@ body {
     box-shadow: 0 0 500px var(--mediumGray);
     top: 50px;
     right: 0;
+    max-height: 0;
+    visibility: hidden;
+    transition: all 1000ms ease;
+    overflow-y: hidden;
 }
 
 .subMenu {
@@ -90,7 +97,8 @@ body {
 }
 
 .subMenu.active, .subMenuB.active {
-    display: block;
+    max-height: 470%;
+    visibility: visible;
 }
 
 .subMenu li, .subMenuB li {
@@ -105,6 +113,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.li {
+    display: flex;
 }
 
 .texts {
@@ -165,12 +177,8 @@ body {
     width: 85%;
 }
 
-.centralContent {
-    height: auto;
-}
-
 .main {
-    margin-top: 5%;
+    height: 100vh;
 }
 
 .attribution {
@@ -183,17 +191,23 @@ body {
 }
 
 @media (max-width: 850px) {
-
+    
     .container {
         width: 100%;
+        height: auto;
     }
 
     .content {
         flex-direction: column-reverse;
     }
 
-    .centralContent {
+    .main {
         padding: 0 20px;
+        height: 100%;
+    }
+
+    .main.expanded {
+        background-color: rgba(0,0,0,0.5);
     }
 
     .texts {
@@ -225,8 +239,10 @@ body {
         width: 100%;
     }
 
-    .menu, .buttons {
-        display: none;
+    .align {
+        display: flex;
+        flex-direction: column;
+
     }
 
     .client {
@@ -239,5 +255,73 @@ body {
 
     .menuHamburger {
         display: block;
+        z-index: 10000;
+    }
+
+    .menu {
+        position: absolute;
+        top: 0;
+        max-width: 0;
+        right: 0;
+        visibility: hidden;
+        overflow-x: hidden;
+        min-height: 135%;
+        background-color: var(--almost-White);
+        transition: all 1000ms ease;
+        justify-content: flex-start;
+        flex-direction: column;
+        height: 0;
+    }
+
+    .buttons {
+        text-align: center;
+    }
+
+    .buttons:last-child {
+        padding: 5px;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .menu li {
+        margin: 0;
+    }
+
+    .menu .li > li:first-child {
+        margin-top: 100px;
+    }
+
+    .li {
+        flex-direction: column;
+    }
+
+    .menuControl > img {
+        right: 40%;
+    }
+
+    .menu.active {
+        max-width: 65%;
+        visibility: visible;
+    }
+    .subMenu, .subMenuB {
+        position: static;
+        background-color: var(--almost-White);
+        border-radius: 8px;
+        box-shadow: 0 0 0;
+        max-width: 100%;
+        transition: all 200ms ease;
+    }
+
+    .subMenu {
+        min-width: 100%;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .subMenu > li:first-child,
+    .subMenuB > li:first-child {
+        margin-top: 20px;
     }
 }
