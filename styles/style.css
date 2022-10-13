@@ -166,7 +166,7 @@ body {
 }
 
 .centralContent {
-    height: 100vh;
+    height: auto;
 }
 
 .main {
@@ -175,5 +175,69 @@ body {
 
 .attribution {
     text-align: center;
+    margin-top: 70px;
 }
 
+.menuHamburger {
+    display: none;
+}
+
+@media (max-width: 850px) {
+
+    .container {
+        width: 100%;
+    }
+
+    .content {
+        flex-direction: column-reverse;
+    }
+
+    .centralContent {
+        padding: 0 20px;
+    }
+
+    .texts {
+        width: 100%;
+        text-align: center;
+    }
+
+    .texts h1 {
+        font-size: 3.5rem;
+        display: inline-block;
+        width: 100%;
+    }
+
+    .texts span {
+        display: inline;
+    }
+
+    .texts p {
+        width: 100%;
+    }
+    .texts button {
+        margin-top: 30px;
+    }
+    .image {
+        width: 100%;
+    }
+    
+    .image picture img {
+        width: 100%;
+    }
+
+    .menu, .buttons {
+        display: none;
+    }
+
+    .client {
+        width: 100%;
+    }
+
+    .client img {
+        width: 16%;
+    }
+
+    .menuHamburger {
+        display: block;
+    }
+}
